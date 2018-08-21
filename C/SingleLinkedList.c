@@ -42,7 +42,7 @@ bool is_empty(PNODE pHead); // 判断链表是否为空
 int length(PNODE pHead); // 求链表的长度
 void sort_list(PNODE pHead); // 排序
 bool insert_list(PNODE pHead, int pos, int val); // 在pHead所指向的链表的第pos的结点前插入新结点
-bool delete_list(PNODE pHead, int pos, int *pval); // 删除第pos个元素
+bool delete_list(PNODE pHead, int pos, int *pVal); // 删除第pos个元素
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -237,7 +237,7 @@ bool insert_list(PNODE pHead, int pos, int val)
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-bool delete_list(PNODE pHead, int pos, int *pval) {
+bool delete_list(PNODE pHead, int pos, int *pVal) {
 	// 删除第pos个元素
 	int len = length(pHead);
 	if (pos > 1 && pos < len)
@@ -250,7 +250,7 @@ bool delete_list(PNODE pHead, int pos, int *pval) {
 			curr = curr->pNext;
 		}
 		pre->pNext = curr->pNext;
-		*pval = curr->data;
+		*pVal = curr->data;
 		free(curr);
 		curr = NULL;
 		return true;
